@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Card</title>
+    <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+    height: 90%;
+    width: 90%;
+    margin-top: 65px;
+    margin-left: 79px; 
+}
+
+ .user-card {
+     display: flex;
+    justify-content: space-around;
+    text-align: center; 
+     /* background-color: #fff;
+    border: 1px solid #ccc; */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     width: 100%;
+    /* margin: 10px;  */
+} 
+
+
+.detail {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.value {
+    color: #333;
+}
+
+.active {
+    color: green;
+    font-weight: bold;
+}
+.wishlist{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    background-color: rgb(241, 94, 94);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn-primary{
+    background-color: aliceblue;
+    text-decoration: none;
+}
+.btn-primary-hover{
+    background-color: aliceblue;
+}
+.container{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 28px
+}
+</style>
+
+<script>
+
+    function deleteCard(id){
+        console.log(id);
+        $.ajax({
+        url: `/client/${id}`,
+        type: 'DELETE',
+        success: function (response) {
+          console.log(response.message);
+        },
+        error: function (error) {
+          console.error('Error deleting card:', error.responseJSON.message);
+        },
+      });  
+      location.reload(); 
+    }
+
+</script>
+
+<body>
+    <div class="container">
+        <button class="btn btn-primary">
+            <a href="/client/add">Add client</a>
+        </button>
+    </div>
+
+    {{#each client}}
+    <div class="user-card">
+        <div class="detail">
+            <span class="label">Name:</span>
+            <span class="value">{{this.name}}</span>
+        </div>
+        <div class="detail">
+            <span class="label">Age:</span>
+            <span class="value">{{this.age}}</span>
+        </div>
+        <div class="detail">
+            <span class="label">Number:</span>
+            <span class="value">{{this.phone}}</span>
+        </div>
+        <div class="detail">
+            <span class="label">Status:</span>
+            <span class="value ">{{this.status}}</span>
+        </div>
+        <span class="wishlist"><i class="fa fa-times" onclick="deleteCard('{{this._id}}')"></i></span>
+    </div>
+    {{/each}}
+</body>
+
+</html>

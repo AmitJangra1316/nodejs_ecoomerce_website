@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    width: 300px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+</style>
+<body>
+    <div class="form-container">
+        <form method="POST" action="/client/add">
+            <label for="name">name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="phone">phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="">Select status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

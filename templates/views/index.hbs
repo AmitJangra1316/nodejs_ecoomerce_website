@@ -1,0 +1,1732 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buildcraft</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+ <style>
+  .navbar-nav>li {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 10px;
+    margin-right: 20px;
+
+}
+
+ #login{
+background-color: rgb(24, 176, 125);
+
+border-radius: 50px;
+}
+.special-text {
+    color: rgb(255, 255, 255);
+}
+.navbar-brand {
+  font-size: 30px;
+  /* padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color); */
+  text-decoration: none;
+  color: #7e282e;
+  white-space: nowrap;
+  margin-left: 60px;
+  font-weight: 10px;
+}
+
+.nav-link{
+    position: relative;
+}
+
+.nav-link::after{
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.nav-link:hover::after{
+    content: '';
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(24, 176, 125);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+.nav-item{
+    font-weight: 30px;
+} 
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: var(--bs-navbar-nav-link-padding-x);
+    padding-left: var(--bs-navbar-nav-link-padding-x);
+    font-size: 18px;
+}
+
+/*  */
+
+.hero {
+    background: var(--cultured-2);
+    padding-block: var(--section-padding);
+  }
+  
+  .hero-content { margin-bottom: 60px; }
+  
+  .hero-subtitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle ion-icon { color: var(--orange-soda); }
+  
+  .hero-subtitle span {
+    color: var(--dark-jungle-green);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-700);
+  }
+  
+  .hero-title { margin-bottom: 20px; }
+  
+  .hero-text {
+    color: var(--cadet);
+    font-size: var(--fs-5);
+    line-height: 1.8;
+    padding-left: 15px;
+    border-left: 1px solid;
+    margin-bottom: 30px;
+  }
+  
+  /* resuse */
+  .container { padding-inline:15px; }
+
+button, a { transition: var(--transition); }
+
+.h1,
+.h2,
+.h3 {
+  color: var(--dark-jungle-green);
+  font-family: var(--ff-poppins);
+  line-height: 1.3;
+}
+
+.h1 {
+  font-size: var(--fs-1);
+  line-height: 1;
+}
+
+.h2 { font-size: var(--fs-2); }
+
+.h3 {
+  font-size: var(--fs-4);
+  font-weight: var(--font-weight, 700);
+}
+
+.h3 > a { color: inherit; }
+
+.btn {
+  position: relative;
+  background: var(--orange-soda);
+  color: var(--white);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-5);
+  text-transform: var(--text-transform, capitalize);
+  border: 1px solid var(--orange-soda);
+  padding: 10px 20px;
+  z-index: 1;
+}
+
+/* .btn:is(:hover, :focus) {
+  background: var(--black);
+  color: var(--dark-jungle-green);
+  border-color: var(--black);
+} */
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--white);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.btn:is(:hover, :focus)::before { width: 100%; }
+
+.w-100 { width: 100%; }
+
+.section-subtitle {
+  color: var(--orange-soda);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  padding: 5px 20px;
+  background: hsla(9, 100%, 62%, 0.1);
+  width: max-content;
+  border-radius: 50px;
+  margin-inline: auto;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  text-align: var(--text-align, center);
+  margin-bottom: var(--margin-bottom, 50px);
+}
+
+.card-badge {
+  background: var(--black);
+  color: var(--white);
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 10px;
+}
+
+.card-badge.green { background: var(--yellow-green); }
+
+.card-badge.orange { background: var(--orange-soda); }
+
+.has-scrollbar {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  overflow-x: auto;
+  margin-inline: -15px;
+  padding-inline: 15px;
+  scroll-padding-left: 15px;
+  padding-bottom: 60px;
+  scroll-snap-type: inline mandatory;
+}
+
+.has-scrollbar > li {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: var(--cultured-2);
+  outline: 2px solid var(--cadet);
+  border-radius: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--cadet);
+  border: 1px solid var(--cultured-2);
+  border-radius: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 15%; }
+
+.hero-content {
+    max-width: unset;
+    margin-bottom: 0;
+  }
+
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .hero-text {
+    padding-left: 30px;
+    max-width: 450px;
+    margin-bottom: 40px;
+  }
+
+  :root {
+
+    /**
+     * colors
+     */
+  
+    --dark-jungle-green: hsl(188, 63%, 7%);
+    --prussian-blue: hsl(200, 69%, 14%);
+    --raisin-black-1: hsl(227, 29%, 13%);
+    --raisin-black-2: hsl(229, 17%, 19%);
+    --yellow-green: hsl(89, 72%, 45%);
+    /* --orange-soda: rgb(24, 176, 125); */
+    --orange-soda:  rgb(24, 176, 125);
+    --cultured-1:  rgb(165, 255, 225);
+    --cultured-2: hsl(192, 24%, 96%);
+    --misty-rose: #e6fcf5;
+    --alice-blue: hsl(210, 100%, 97%);
+    --seashell:  #e9fef7;
+    --cadet: hsl(200, 15%, 43%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --opal: hsl(180, 20%, 62%);
+  
+    /**
+     * typography
+     */
+  
+    --ff-nunito-sans: "Nunito Sans", sans-serif;
+    --ff-poppins: "Poppins", sans-serif;
+  
+    --fs-1: 1.875rem;
+    --fs-2: 1.5rem;
+    --fs-3: 1.375rem;
+    --fs-4: 1.125rem;
+    --fs-5: 0.875rem;
+    --fs-6: 0.813rem;
+    --fs-7: 0.75rem;
+  
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    
+    --transition: 0.25s ease;
+  
+    --section-padding: 100px;
+  
+    --shadow-1: 0 5px 20px 0 hsla(219, 56%, 21%, 0.1);
+    --shadow-2: 0 16px 32px hsla(188, 63%, 7%, 0.1);
+  
+  }
+
+  
+  /* feature */
+  .features {
+    background: var(--cultured-2);
+    padding-block: var(--section-padding);
+  }
+  
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 20px;
+  }
+
+  .features-list > li { width: calc(50% - 10px); }
+  
+  .features-card {
+    position: relative;
+    background: var(--white);
+    padding: 40px 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-1);
+  }
+  
+  .features-card:is(:hover, :focus) { background: var(--orange-soda); }
+  
+  .features-card .card-icon {
+    background: var(--seashell);
+    color: var(--orange-soda);
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 28px;
+  }
+  
+  .features-card .card-icon ion-icon { --ionicon-stroke-width: 20px; }
+  
+  .features-card .card-title {
+    color: var(--dark-jungle-green);
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-600);
+    text-align: center;
+    transition: var(--transition);
+  }
+  
+  .features-card:is(:hover, :focus) .card-title { color: var(--white); }
+  
+  .features-card .card-btn {
+    background: var(--white);
+    color: var(--cadet);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px hsla(219, 56%, 21%, 0.1);
+    transition: var(--transition);
+  }
+  
+  .features-card:is(:hover, :focus) .card-btn { color: var(--orange-soda); }
+  
+  /* reuse */
+  /**
+ * responsive for larger than 600px screen
+ */
+  @media (min-width: 600px) {
+
+    :root {
+  
+      --fs-2: 1.875rem;
+  
+    }
+
+    .container {
+      max-width: 550px;
+      margin-inline: auto;
+    }
+  
+    .has-scrollbar {
+      gap: 25px;
+      margin-inline: -25px;
+      padding-inline: 25px;
+      scroll-padding-left: 25px;
+    }
+  
+    .has-scrollbar > li { min-width: calc(50% - 12.5px); }
+  
+}
+/**
+ * responsive for larger than 768px screen
+ */
+ @media (min-width: 768px) {
+
+    :root {
+
+      --fs-1: 2.5rem;
+      --fs-5: 0.938rem;
+      --fs-6: 0.875rem;
+  
+    }
+
+    .container { max-width: 720px; }
+  
+    .btn {
+      --fs-5: 1rem;
+      padding: 12px 28px;
+    }  
+    .hero-content { max-width: 400px; }
+
+
+  .features-list > li { width: calc(33.33% - 13.33px); }
+
+  .features-card { gap: 20px; }
+
+  .features-card .card-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
+
+  .features-card .card-title { --fs-6: 1.125rem; }
+
+  .about .section-title { max-width: 30ch; }
+
+  .about-text { max-width: 55ch }
+
+  .about-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/**
+ * responsive for larger than 992px screen
+ */
+
+ @media (min-width: 992px) {
+
+    :root {
+  
+  
+      --fs-1: 3.125rem;
+      --fs-4: 1.375rem;
+  
+    }
+
+    .container { max-width: 970px; }
+  
+    .hero-content {
+        max-width: unset;
+        margin-bottom: 0;
+      }
+    
+      .hero .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    
+    .btn { padding: 15px 40px; }
+
+  .features-list { column-gap: 30px; }
+
+  .features-list > li { width: calc(25% - 30px); }
+
+  .about .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .about-banner { margin-bottom: 0; }
+
+  .about-banner > img { width: 100%; }
+
+
+}
+
+/**
+ * responsive for larger than 1200px screen
+ */
+
+ @media (min-width: 1200px) {
+
+    :root {
+
+      --fs-2: 2.75rem;
+      --fs-4: 1.5rem;
+  
+    }
+
+    .container { max-width: 1200px; }
+  
+    .has-scrollbar > li { min-width: calc(33.33% - 16.66px); }
+  
+}
+
+
+/* about */
+.about { padding-block: var(--section-padding); }
+
+.about-banner {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.about-banner > img {
+  max-width: max-content;
+  width: 100%;
+}
+
+.about-banner .abs-img {
+  position: absolute;
+  bottom: 100px;
+  left: 15px;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.about .section-subtitle { margin-inline: 0; }
+
+.about .section-title {
+  --text-align: left;
+  --margin-bottom: 15px;
+}
+
+.about-text {
+  color: var(--cadet);
+  font-size: var(--fs-5);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.about-list { margin-bottom: 30px; }
+
+.about-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.about-item-icon {
+  background: var(--misty-rose);
+  height: 45px;
+  min-width: 45px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.about-item-icon ion-icon {
+  color: var(--orange-soda);
+  font-size: 18px;
+}
+
+.about-item-text {
+  color: var(--cadet);
+  font-size: var(--fs-5);
+}
+
+.about .callout {
+  background: hsla(0, 0%, 38%, 0.05);
+  color: var(--cadet);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+  line-height: 1.8;
+  padding: 20px 25px;
+  border-left: 4px solid var(--orange-soda);
+  margin-bottom: 40px;
+}
+
+.about .btn {
+  max-width: max-content;
+  --text-transform: uppercase;
+}
+
+.section-subtitle {
+  color: rgb(255 255 255);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  background: rgb(31 163 119);
+  padding: 5px 20px;
+  width: max-content;
+  border-radius: 50px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+}
+
+
+
+/* s */
+:root {
+
+  /**
+   * colors
+   */
+
+  --maximum-yellow-red: hsl(37, 100%, 68%);
+  /* --royal-blue-dark: hsl(231, 61%, 22%); */
+  --silver-chalice: hsl(0, 0%, 70%);
+  /* --oxford-blue: hsl(231, 100%, 8%); */
+  --bittersweet: hsl(2, 100%, 69%);
+  --french-rose: rgb(24, 176, 125);
+  --davys-gray: hsl(180, 3%, 28%);
+  /* --cool-gray: hsl(240, 13%, 62%); */
+  --platinum: hsl(0, 0%, 92%);
+  --white-2: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --rythm: hsl(240, 9%, 53%);
+  --instalike: rgb(24, 176, 125);
+
+  /**
+   * typography
+   */
+
+  --ff-poppins: "Poppins", sans-sarif;
+
+  --fs-1: 32px;
+  --fs-2: 26px;
+  --fs-3: 22px;
+  --fs-4: 18px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+
+  /* --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500; */
+
+  /**
+   * transition
+   */
+
+  --transition: 0.25s ease-in-out;
+
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a { text-decoration: none; }
+
+a,
+img,
+button,
+span,
+ion-icon,
+label,
+input,
+textarea { display: block; }
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+textarea,
+input {
+  font: inherit;
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+:is(input, textarea):focus { outline: none; }
+
+:focus { outline-offset: 4px; }
+
+html {
+  font-family: var(--ff-poppins);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { background: var(--white); }
+
+::-webkit-scrollbar-thumb { background: hsl(0, 0%, 50%); }
+
+
+
+.container { padding: 0 15px; }
+
+.h1,
+.h2,
+.h3 {
+  font-weight: var(--fw-600);
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.h1 {
+  color:black;
+  font-size: var(--fs-1);
+}
+
+.h2 { font-size: var(--fs-2); }
+
+.h3 {
+  color: black;
+  font-size: var(--fs-3);
+}
+
+.h4 {
+  color: black;
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+}
+
+.btn {
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+  font-weight: var(--fw-600);
+  padding: 10px 40px;
+  border: 1px solid;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  background: var(--instalike);
+  border-color: var(--instalike);
+  color: var(--white);
+}
+
+.btn-primary:is(:hover, :focus) { --bittersweet: hsl(2, 90%, 65%); }
+
+.btn-secondary:is(:hover, :focus) { background: black; }
+
+.contact { margin-bottom: 120px; }
+
+.contact-content { margin-bottom: 50px; }
+
+.contact-title {
+  color: black;
+  margin-top: 66px;
+  margin-bottom: 60px;
+  text-align: center;
+  /* font-weight: var(--fw-500) !important; */
+}
+
+.contact-banner img { width: 100%; }
+
+.input-wrapper { margin-bottom: 30px; }
+
+.input-label {
+  color: var(--oxford-blue);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  margin-bottom: 10px;
+}
+
+.input-field {
+  border-bottom: 1px solid var(--platinum);
+  padding: 7px 0;
+  font-size: var(--fs-6);
+}
+
+.input-field::placeholder { color: var(--silver-chalice); }
+
+textarea {
+  max-height: 300px;
+  min-height: 100px;
+  height: 100px;
+  resize: vertical;
+}
+
+@media (min-width: 450px) {
+
+  /**
+   * CUSTOM PROPERTY 
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-1: 60px;
+
+  }
+
+
+
+  /**
+   * REUESED STYLE 
+   */
+
+  /* .h1,
+  .h2 { font-weight: var(--fw-700); } */
+
+  .btn { padding-block: 15px; }
+
+  .contact-title { --fs-2: 32px; }
+
+  .contact-banner {
+    max-width: 300px;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 560px) {
+
+
+  .container {
+    max-width: 550px;
+    margin-inline: auto;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  /**
+   * CUSTOM PROPERTY 
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-2: 35px;
+    --fs-4: 20px;
+
+  }
+
+
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 740px; }
+
+  .contact-title { --fs-2: 42px; }
+
+}
+
+@media (min-width: 1024px) {
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 950px; }
+  
+
+  .contact .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .contact-content { max-width: 400px; }
+
+  .contact-title { text-align: left; }
+
+  .contact-form { width: 50%; }
+}
+@media (min-width: 1200px) {
+
+  /**
+   * CUSTOM PROPERTY 
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-2: 42px;
+
+  }
+
+
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container { max-width: 1150px; }
+
+
+}
+/* product */
+.card-button button {
+  background-color: #bcddf4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-button button:hover {
+  background-color: #bcddf4;
+}
+
+/*  */
+.row {
+  width: 300px;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image-container {
+  position: relative;
+}
+
+.thumbnail-image {
+  border-radius: 10px !important;
+}
+
+.discount {
+  background-color: red;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 10px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.wishlist {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first {
+  position: absolute;
+  width: 100%;
+  padding: 9px;
+}
+
+.dress-name {
+  font-size: 13px;
+  font-weight: bold;
+  width: 75%;
+}
+
+.new-price {
+  font-size: 13px;
+  font-weight: bold;
+  color: red;
+}
+
+.old-price {
+  font-size: 8px;
+  font-weight: bold;
+  color: grey;
+}
+/* 
+.btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  padding: 3px;
+} */
+
+.creme {
+  background-color: #fff;
+  border: 2px solid grey;
+}
+
+.creme:hover {
+  border: 3px solid grey;
+}
+
+.creme:focus {
+  background-color: grey;
+}
+
+.red {
+  background-color: #fff;
+  border: 2px solid red;
+}
+
+.red:hover {
+  border: 3px solid red;
+}
+
+.red:focus {
+  background-color: red;
+}
+
+.blue {
+  background-color: #fff;
+  border: 2px solid #40c4ff;
+}
+
+.blue:hover {
+  border: 3px solid #40c4ff;
+}
+
+.blue:focus {
+  background-color: #40c4ff;
+}
+
+.darkblue {
+  background-color: #fff;
+  border: 2px solid #01579b;
+}
+
+.darkblue:hover {
+  border: 3px solid #01579b;
+}
+
+.darkblue:focus {
+  background-color: #01579b;
+}
+
+.yellow {
+  background-color: #fff;
+  border: 2px solid #ffca28;
+}
+
+.yellow:hover {
+  border-radius: 3px solid #ffca28;
+}
+
+.yellow:focus {
+  background-color: #ffca28;
+}
+
+.item-size {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid grey;
+  color: grey;
+  font-size: 10px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.rating-star {
+  font-size: 10px !important;
+}
+
+.rating-number {
+  font-size: 10px;
+  color: grey;
+}
+
+.buy {
+  font-size: 12px;
+  color: purple;
+  font-weight: 500;
+}
+
+.voutchers {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 190px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+}
+
+.voutcher-divider {
+  display: flex;
+}
+
+.voutcher-left {
+  width: 60%;
+}
+
+.voutcher-name {
+  color: grey;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.voutcher-code {
+  color: red;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.voutcher-right {
+  width: 40%;
+  background-color: purple;
+  color: #fff;
+}
+
+.discount-percent {
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  top: 5px;
+}
+
+.off {
+  font-size: 14px;
+  position: relative;
+  bottom: 5px;
+}
+
+#product {
+  cursor: pointer;
+}
+
+.navbar-nav>li {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 10px;
+  margin-right: 20px;
+
+}
+
+
+.row-boxing{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  /* margin-left: 200px;
+  margin-right: 170px; */
+  padding-bottom: 50px;
+  padding-left: 100px;
+  justify-content: center;
+  }
+
+  .button-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:  10px;
+    margin-top: 30px;
+  }
+
+  .card-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+</style> 
+
+<body>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./css/style2.css">
+  </head>
+  
+  <body>
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary  fixed-top">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">BuildCrafters</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link"  href="#">About</a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="/client">Users</a>
+                  </li>
+  
+                  <li class="nav-item " id="login">
+                      <a class="nav-link"   href="/auth/login" ><span class="special-text" >Login</span></a>
+                  </li>
+  
+                  <li class="nav-item " id="login">
+                      <a class="nav-link"  href="/auth/logout" ><span class="special-text" >Logout</span></a>
+                  </li> 
+          
+                  <!-- <li>
+                      <a id="loginButton" href="/auth/login">Login</a>
+                  </li>
+                  <li>
+                      <a id="logoutButton" href="/auth/logout">Logout</a>
+                  </li> -->
+              </ul>
+          
+          </div>
+      </div>
+  </nav>
+      
+  </body>
+  </html>
+  
+  
+  
+  
+  
+
+  <main>
+    <article>
+      <section class="cdis  hero" id="s_1">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">
+
+              <span style="color:rgb(24, 176, 125)" id="c_47" icon="bi-house-fill" class="dynamic bi-house-fill"></span>
+
+              <span id="c_1" class="dynamic">Real Estate Agency</span>
+            </p>
+
+            <h2 class="h1 hero-title dynamic" id="c_2">Find Your Dream House By Us</h2>
+
+            <p class="hero-text dynamic" id="c_3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore.</p>
+
+            <a href="#" style=" width: 40%; text-align:center;" class="btn dynamic" id="c_4">Make An Enquiry</a>
+
+          </div>
+
+          <figure class="hero-banner">
+            <!-- <img src="https://vq.pe/creator/frontend/theme_7/images/hero-banner.png" alt="Modern house model" class="w-100 dynamic" id="c_5"> -->
+            <img src="https://img.freepik.com/free-photo/sustainability-concept-with-plants-growing-from-geometric-forms_23-2148994272.jpg?size=626&ext=jpg&ga=GA1.2.652518718.1682870250&semt=ais" alt="Modern house model" class="w-100 dynamic"
+              id="c_5">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+      <!-- about -->
+      <section class="cdis  about" id="s_2">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="https://vq.pe/creator/frontend/theme_7/images/about-banner-1.png" alt="House interior" id="c_6"
+              class="dynamic">
+
+            <!-- <img src="https://vq.pe/creator/frontend/theme_7/images/about-banner-2.jpg" alt="House interior" class="abs-img dynamic" id="c_7"> -->
+            <!-- <img src="./public/images/home_2.png" alt="House interior" id="c_6" class="dynamic">  -->
+            <!--     
+              <img src="./public/images/home_2.png" alt="House interior" class="abs-img dynamic" id="c_7"> -->
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle dynamic" id="c_8">About Us</p>
+
+            <h2 class="h2 section-title dynamic" id="c_9">The Leading Real Estate Rental Marketplace.</h2>
+
+            <p class="about-text dynamic" id="c_10">Over 39,000 people work for us in more than 70 countries all over
+              the This breadth of global coverage, combined with specialist services</p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_48" icon="bi-house" class="dynamic bi-house"></span>
+                </div>
+
+                <p class="about-item-text dynamic" id="c_11">Smart Home Design</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_49" icon="bi-tree" class="dynamic bi-tree"></span>
+                </div>
+
+                <p class="about-item-text dynamic" id="c_12">Beautiful Scene Around</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_50" icon="bi-sun" class="dynamic bi-sun"></span>
+                </div>
+
+                <p class="about-item-text dynamic" id="c_13">Exceptional Lifestyle</p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-item-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_51" icon="bi-shield-check"
+                    class="dynamic bi-shield-check"></span>
+                </div>
+
+                <p class="about-item-text dynamic" id="c_14">Complete 24/7 Security</p>
+              </li>
+
+            </ul>
+
+            <p class="callout dynamic" id="c_15">&quot;Enimad minim veniam quis nostrud exercitation llamco laboris.
+              Lorem ipsum dolor sit amet&quot;</p>
+
+            <a href="#service" class="btn dynamic" id="c_16">Our Services</a>
+
+          </div>
+
+        </div>
+      </section>
+      <!-- product -->
+      <section class="cdis  features" id="s_5">
+        <p class="section-subtitle dynamic" id="c_34">Product</p>
+        <div class="row-boxing">
+
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card">
+                  <div class="image-container">
+                    <div class="first">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span class="discount">12%</span>
+                        <span class="wishlist"><i class="fa fa-times"></i></span>
+                      </div>
+                    </div>
+
+                    <img src="https://i.dummyjson.com/data/products/1/1.jpg" class="img-fluid rounded thumbnail-image"
+                      alt="no" />
+                  </div>
+
+                  <div class="product-detail-container p-2" id="product">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h5 class="dress-name">i phone 9</h5>
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between align-items-center pt-1">
+                      <div>
+                        <i class="fa fa-star-o rating-star"></i>
+                        <span class="rating-number">4.5</span>
+                      </div>
+
+                      <span class="buy">BUY +</span>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card">
+                  <div class="image-container">
+                    <div class="first">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span class="discount">12%</span>
+                        <span class="wishlist"><i class="fa fa-times"></i></span>
+                      </div>
+                    </div>
+
+                    <img src="https://i.dummyjson.com/data/products/1/1.jpg" class="img-fluid rounded thumbnail-image"
+                      alt="no" />
+                  </div>
+
+                  <div class="product-detail-container p-2" id="product">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h5 class="dress-name">i phone 9</h5>
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between align-items-center pt-1">
+                      <div>
+                        <i class="fa fa-star-o rating-star"></i>
+                        <span class="rating-number">4.5</span>
+                      </div>
+
+                      <span class="buy">BUY +</span>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card">
+                  <div class="image-container">
+                    <div class="first">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span class="discount">12%</span>
+                        <span class="wishlist"><i class="fa fa-times"></i></span>
+                      </div>
+                    </div>
+
+                    <img src="https://i.dummyjson.com/data/products/1/1.jpg" class="img-fluid rounded thumbnail-image"
+                      alt="no" />
+                  </div>
+
+                  <div class="product-detail-container p-2" id="product">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h5 class="dress-name">i phone 9</h5>
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between align-items-center pt-1">
+                      <div>
+                        <i class="fa fa-star-o rating-star"></i>
+                        <span class="rating-number">4.5</span>
+                      </div>
+
+                      <span class="buy">BUY +</span>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="card">
+                  <div class="image-container">
+                    <div class="first">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span class="discount">12%</span>
+                        <span class="wishlist"><i class="fa fa-times"></i></span>
+                      </div>
+                    </div>
+
+                    <img src="https://i.dummyjson.com/data/products/1/1.jpg" class="img-fluid rounded thumbnail-image"
+                      alt="no" />
+                  </div>
+
+                  <div class="product-detail-container p-2" id="product">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <h5 class="dress-name">i phone 9</h5>
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between align-items-center pt-1">
+                      <div>
+                        <i class="fa fa-star-o rating-star"></i>
+                        <span class="rating-number">4.5</span>
+                      </div>
+
+                      <span class="buy">BUY +</span>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="button-row">
+          <div class="card-button">
+            <button>
+              <a href="/product">more product</a>
+            </button>
+          </div>
+          <div class="card-button">
+            <button>
+              <a href="/product/add">Add product</a>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!--our anim  -->
+
+      <section class="cdis  features" id="s_5">
+        <div class="container">
+
+          <p class="section-subtitle dynamic" id="c_34">Our Aminities</p>
+
+          <h2 class="h2 section-title dynamic" id="c_35">Building Aminities</h2>
+
+          <ul class="features-list">
+
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_52" icon="bi-car-front"
+                    class="dynamic bi-car-front"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_36">Parking Space</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_60" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_53" icon="bi-droplet" class="dynamic bi-droplet"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_37">Swimming Pool</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_61" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+            </li>
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_54" icon="bi-shield-check"
+                    class="dynamic bi-shield-check"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_38">Private Security</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_62" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_55" icon="bi-hospital" class="dynamic bi-hospital"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_39">Medical Center</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_63" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_56" icon="bi-book" class="dynamic bi-book"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_40">Library Area</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_64" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_57" icon="bi-usb-mini" class="dynamic bi-usb-mini"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_41">King Size Beds</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_65" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_58" icon="bi-house-heart"
+                    class="dynamic bi-house-heart"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_68">Smart Homes</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_66" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="features-card">
+                <div class="card-icon">
+                  <span style="color:rgb(11, 128, 89)" id="c_59" icon="bi-balloon-heart"
+                    class="dynamic bi-balloon-heart"></span>
+                </div>
+
+                <h3 class="card-title dynamic" id="c_43">Kid Playland</h3>
+
+                <div class="card-btn">
+                  <a style="color:#5d737e" id="c_67" class="dynamic bi-arrow-right" href="#"></a>
+                </div>
+              </div>
+            </li>
+
+      </section>
+
+      <!-- contact -->
+      <section class="contact cdis  " id="s_5">
+        <div class="container">
+
+          <div class="contact-content">
+            <h2 class="h2 contact-title dynamic" id="c_31">Let’s scale your brand, together</h2>
+
+            <figure class="contact-banner">
+              <img src="https://vq.pe/creator/frontend/theme_10/images/contact.png" alt="contact banner" id="c_32"
+                class="dynamic">
+            </figure>
+          </div>
+
+          <form class="contact-form" action="/contact" method="post">
+
+            <!-- <form class="contact-form" onsubmit="formAjax(event,this)" enctype="multipart/form-data" controller_name="ActionController" function_name="contactForm" action="/contact" method="post" >  -->
+
+            <input type="hidden" name="website_id" value="532">
+            <div class="input-wrapper">
+              <label for="name" class="input-label">Name *</label>
+
+              <input type="text" name="name" id="name" required placeholder="Type Name" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="phone" class="input-label">Phone</label>
+
+              <input type="tel" name="phone" id="phone" placeholder="Type Phone Number" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="email" class="input-label">Email Address *</label>
+
+              <input type="email" name="email" id="email" required placeholder="Type Email Address" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="message" class="input-label">Your Message *</label>
+
+              <textarea name="message" id="message" placeholder="Message" required class="input-field"></textarea>
+            </div>
+            <div id="notice"></div>
+
+            <button type="submit" class="btn dynamic">Send Message</button>
+
+          </form>
+
+        </div>
+      </section>
+
+
+
+    </article>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://vq.pe/creator/admin/js/cookies.js?v=1677495349"></script>
+  <script src="https://vq.pe/creator/admin/js/form_ajax.js?v=1671698837"></script>
+  <script src="https://vq.pe/creator/frontend/js/main.js?v=1678114141"></script>
+</body>
+
+</html>
