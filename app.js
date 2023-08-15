@@ -30,7 +30,7 @@ hbs.registerPartials(partialpath);
 
 main().catch(err => console.log(err));
 async function main() {
-    await mongoose.connect('mongodb+srv://jenkincoder:eHrSDbqzvKDy0v3j@cluster0.wxoptfd.mongodb.net/ecommerce?retryWrites=true&w=majority')
+    await mongoose.connect('mongodb+srv://jenkincoder:@cluster0.wxoptfd.mongodb.net/ecommerce?retryWrites=true&w=majority')
     console.log('database connection started');
 }
 
